@@ -1,27 +1,29 @@
-# User configuration for HyperSerialPico section starts here
+if (NOT PICO_PROGRAM_MAIN_ENTRY)
+	# User configuration for HyperSerialPico section starts here
 
-# Some boards, such as the first Adafruit revisions, may have trouble booting properly
-# due to bad componets used in the design.
-# Turn this setting to ON if your rp2040 is not detected after firmware upload and reset
-set(BOOT_WORKAROUND OFF)
+	# Some boards, such as the first Adafruit revisions, may have trouble booting properly
+	# due to bad componets used in the design.
+	# Turn this setting to ON if your rp2040 is not detected after firmware upload and reset
+	set(BOOT_WORKAROUND OFF)
 
-# Default output data pin for the non-SPI LED strips (only for sk6812/ws2812b)
-set(OUTPUT_DATA_PIN 2)
+	# Default output data pin for the non-SPI LED strips (only for sk6812/ws2812b)
+	set(OUTPUT_DATA_PIN 2)
 
-# Default output data/clocks pin for the SPI LED strips (only for apa102, not for sk6812/ws2812b)
-# only certain pairs of pins are allowed for selected SPI interface (refer to "readme.md")
-set(OUTPUT_SPI_DATA_PIN 3)
-set(OUTPUT_SPI_CLOCK_PIN 2)
-set(OUTPUT_SPI_INTERFACE spi0)
+	# Default output data/clocks pin for the SPI LED strips (only for apa102, not for sk6812/ws2812b)
+	# only certain pairs of pins are allowed for selected SPI interface (refer to "readme.md")
+	set(OUTPUT_SPI_DATA_PIN 3)
+	set(OUTPUT_SPI_CLOCK_PIN 2)
+	set(OUTPUT_SPI_INTERFACE spi0)
 
-# Use multi-segment, starting index of second led strip or OFF to disable
-set(SECOND_SEGMENT_INDEX ON)
+	# Use multi-segment, starting index of second led strip or OFF to disable
+	set(SECOND_SEGMENT_INDEX OFF)
 
-# If multi-segment is used and it's reversed, set this option to ON to enable reversing
-set(SECOND_SEGMENT_REVERSED ON)
+	# If multi-segment is used and it's reversed, set this option to ON to enable reversing
+	set(SECOND_SEGMENT_REVERSED OFF)
 
-# User configuration section ends here
-# Usually you don't need to change anything below this section
+	# User configuration section ends here
+	# Usually you don't need to change anything below this section
+endif()
 
 cmake_minimum_required(VERSION 3.13)
 
